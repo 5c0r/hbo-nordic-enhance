@@ -1,15 +1,20 @@
-"use strict";
+'use strict';
 
-document.body.addEventListener("keydown", ev => {
-  // console.log("keydown", ev);
+// console.log('hello in efffect');
+
+document.body.addEventListener('keydown', ev => {
+  // console.log('keydown', ev);
 
   const thatCode = ev.keyCode || ev.which;
   const videoElement = document.getElementById(
-    "vjs_video_1_Clpp_html5_mse_api"
+    'vjs_video_1_Clpp_html5_mse_api'
   );
+
+  if (!videoElement) return;
 
   // TODO: Duration can be customized
   // TODO: Worst code ever written ! Booohooo
+  // TODO: Switchy ?!
 
   // Space
   if (thatCode == 32) {
@@ -51,6 +56,7 @@ document.body.addEventListener("keydown", ev => {
       : (videoElement.volume -= 0.15);
   }
 
+  // M 
   if (thatCode == 77) {
     videoElement.muted
       ? (videoElement.muted = false)
